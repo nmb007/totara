@@ -53,7 +53,7 @@ a:hover { text-decoration-thickness: 2px; }
 .role,
 .num,
 .toc,
-.frame figcaption,
+.shot figcaption,
 .stack,
 .cert {
   font-family: "Avenir Next", "Segoe UI", sans-serif;
@@ -260,10 +260,6 @@ code {
 }
 
 .horizon {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 1.5rem;
-  align-items: start;
   margin-top: 1.4rem;
 }
 
@@ -278,18 +274,75 @@ code {
   border-top: 1px solid var(--line);
 }
 
-.frames {
+.shots {
   display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
-  gap: 0.75rem;
+  gap: 1.35rem;
+  margin-top: 1.6rem;
 }
 
-.frame {
+.shot { margin: 0; }
+
+.shot-open {
+  display: block;
+  width: 100%;
   margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: 0.7rem;
 }
 
-.frame figcaption {
-  margin-bottom: 0.4rem;
+.shot-open img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d5cec1;
+  border-radius: 0.7rem;
+  box-shadow: var(--shadow);
+}
+
+.lightbox {
+  width: min(1100px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  margin: auto;
+  padding: 2.4rem 0.75rem 0.75rem;
+  border: 0;
+  border-radius: 0.8rem;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.lightbox::backdrop {
+  background: rgba(27, 25, 22, 0.72);
+}
+
+.lightbox img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 5rem);
+  object-fit: contain;
+  border-radius: 0.45rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.55rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.shot figcaption {
+  margin: 0.5rem 0 0;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 650;
@@ -297,106 +350,11 @@ code {
   text-transform: uppercase;
 }
 
-.login,
-.shell {
-  overflow: hidden;
-  border: 1px solid #d5cec1;
-  border-radius: 0.7rem;
-  background: var(--paper);
-  box-shadow: var(--shadow);
-}
-
-.login {
+.shot-pair {
   display: grid;
-  min-height: 210px;
-  place-items: center;
-  background:
-    linear-gradient(160deg, rgba(20, 92, 69, 0.92), rgba(20, 92, 69, 0.72)),
-    repeating-linear-gradient(135deg, #1a6b50 0 12px, #187258 12px 24px);
-}
-
-.login-card {
-  display: grid;
-  gap: 0.45rem;
-  width: 68%;
-  padding: 0.9rem;
-  border-radius: 0.45rem;
-  background: #fff;
-}
-
-.mark {
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 0.25rem;
-  background: var(--side);
-}
-
-.mark.light { background: #d7efe4; }
-
-.bar,
-.field,
-.btn {
-  display: block;
-  height: 0.45rem;
-  border-radius: 99px;
-  background: #e6e0d4;
-}
-
-.bar.w1 { width: 55%; }
-.field { height: 0.7rem; background: #f3efe6; }
-.btn { width: 42%; height: 0.8rem; background: var(--side); }
-
-.shell {
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  min-height: 210px;
-}
-
-.side {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  padding: 0.75rem 0.7rem;
-  background: var(--side);
-}
-
-.tick {
-  display: block;
-  width: 100%;
-  height: 0.38rem;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.45);
-}
-
-.tick.short { width: 65%; }
-
-.main { padding: 0.7rem; }
-
-.topbar { display: flex; justify-content: flex-end; }
-
-.search {
-  padding: 0.28rem 0.6rem;
-  border-radius: 99px;
-  background: #efeae0;
-  color: var(--muted);
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.4rem;
-  margin-top: 0.7rem;
-}
-
-.cards span {
-  display: block;
-  height: 4.6rem;
-  border-radius: 0.35rem;
-  background: linear-gradient(#efeae0, #efeae0) 0 0 / 100% 42% no-repeat, #f7f4ee;
-  border: 1px solid #ebe4d6;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: start;
 }
 
 .colophon {
@@ -430,9 +388,7 @@ code {
 
 @media (max-width: 720px) {
   .section,
-  .horizon,
-  .frames,
-  .shell {
+  .shot-pair {
     grid-template-columns: 1fr;
   }
 
@@ -445,8 +401,6 @@ code {
     height: 5.5rem;
   }
 
-  .login,
-  .shell { min-height: 180px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -100,47 +100,54 @@
         <h2>Horizon</h2>
         <p class="section-lead">A Totara 20 child theme of Inspire. Each organisation gets its own colours, logo, and login artwork.</p>
         <div class="horizon">
-          <div class="horizon-copy">
-            <ul>
-              <li>Full-screen login</li>
-              <li>Forgotten-password flow on the same branded card</li>
-              <li>Brand-coloured sidebar</li>
-              <li>Expand and collapse navigation, with a desktop default per tenant</li>
-              <li>Catalogue search in the top bar</li>
-              <li>Two-pane preferences, grouped into profile, learning, notifications, and the rest</li>
-              <li>Redesigned the performance drawer into a compact bar of labelled chips for page time, memory, and database, with GraphQL stats that expand when performance info is on</li>
-            </ul>
-          </div>
-          <div class="frames" aria-hidden="true">
-            <figure class="frame">
-              <figcaption>Login</figcaption>
-              <div class="login">
-                <div class="login-card">
-                  <span class="mark"></span>
-                  <span class="bar w1"></span>
-                  <span class="field"></span>
-                  <span class="field"></span>
-                  <span class="btn"></span>
-                </div>
+          <ul>
+            <li>Full-screen login</li>
+            <li>Forgotten-password flow on the same branded card</li>
+            <li>Brand-coloured sidebar</li>
+            <li>Expand and collapse navigation, with a desktop default per tenant</li>
+            <li>Catalogue search in the top bar</li>
+            <li>Two-pane preferences, grouped into profile, learning, notifications, and the rest</li>
+            <li>Redesigned the performance drawer into a compact bar of labelled chips for page time, memory, and database, with GraphQL stats that expand when performance info is on</li>
+          </ul>
+          <div class="shots">
+            <div class="shot-pair">
+              <figure class="shot">
+                <button type="button" class="shot-open">
+                  <img src="login.png" alt="Horizon sign-in on a full-screen photo, with Google, Microsoft, Facebook, and a username form.">
+                </button>
+                <figcaption>Full-screen login</figcaption>
+              </figure>
+              <figure class="shot">
+                <button type="button" class="shot-open">
+                  <img src="dashboard%20with%20top%20search%20bar.png" alt="Signed-in Horizon with a dark blue sidebar and Search learning in the top bar.">
+                </button>
+                <figcaption>Sidebar and catalogue search</figcaption>
+              </figure>
+            </div>
+            <div class="shot-pair">
+              <figure class="shot">
+                <button type="button" class="shot-open">
+                  <img src="forgot%20password.png" alt="Reset-password card centred on the same full-screen login background.">
+                </button>
+                <figcaption>Forgotten password</figcaption>
+              </figure>
+              <figure class="shot">
+                <button type="button" class="shot-open">
+                  <img src="user%20preferences.png" alt="Preferences with a category list and a Profile and security panel.">
+                </button>
+                <figcaption>Two-pane preferences</figcaption>
+              </figure>
+            </div>
+            <figure class="shot">
+              <div class="shot-pair">
+                <button type="button" class="shot-open">
+                  <img src="developer%20toolbar%201.png" alt="Performance drawer expanded to page time, memory, and database.">
+                </button>
+                <button type="button" class="shot-open">
+                  <img src="developer%20toolbar%202.png" alt="Compact performance chips, with the GraphQL panel open.">
+                </button>
               </div>
-            </figure>
-            <figure class="frame">
-              <figcaption>Signed in</figcaption>
-              <div class="shell">
-                <div class="side">
-                  <span class="mark light"></span>
-                  <span class="tick"></span>
-                  <span class="tick"></span>
-                  <span class="tick"></span>
-                  <span class="tick short"></span>
-                </div>
-                <div class="main">
-                  <div class="topbar"><span class="search">Catalogue</span></div>
-                  <div class="cards">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
+              <figcaption>Performance drawer</figcaption>
             </figure>
           </div>
         </div>
@@ -180,5 +187,34 @@
   <footer class="colophon">
     <p class="who"><a href="mailto:naveed.masood@arbisoft.com" target="_blank" rel="noopener noreferrer">naveed.masood@arbisoft.com</a></p>
   </footer>
+
+  <dialog class="lightbox" id="lightbox">
+    <button type="button" class="lightbox-close" aria-label="Close">Close</button>
+    <img alt="">
+  </dialog>
+  <script>
+    (function () {
+      var dialog = document.getElementById("lightbox");
+      var view = dialog.querySelector("img");
+      document.querySelectorAll(".shot-open").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var source = button.querySelector("img");
+          view.src = source.src;
+          view.alt = source.alt;
+          dialog.showModal();
+        });
+      });
+      dialog.addEventListener("click", function (event) {
+        if (event.target === dialog) dialog.close();
+      });
+      dialog.querySelector(".lightbox-close").addEventListener("click", function () {
+        dialog.close();
+      });
+      dialog.addEventListener("close", function () {
+        view.removeAttribute("src");
+        view.alt = "";
+      });
+    }());
+  </script>
 </body>
 </html>
