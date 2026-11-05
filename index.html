@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Naveed Masood Butt — Totara</title>
+  <meta name="description" content="Self-hosted Totara 20 work by Naveed Masood Butt: platform, integrations, the Horizon theme, and AI skills for Totara development.">
+  <link rel="canonical" href="https://nmb007.github.io/totara/">
+  <meta property="og:title" content="Naveed Masood Butt — Totara">
+  <meta property="og:description" content="Self-hosted Totara 20: platform, integrations, the Horizon theme, and an AI workflow on Totara's own APIs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nmb007.github.io/totara/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231b1916'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='16' fill='%23f4f1ea'%3EN%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="mast">
+    <p class="kicker">Totara showcase</p>
+    <h1>Naveed Masood Butt</h1>
+    <p class="role">Solution Architect</p>
+    <p class="lede">I am a technology enthusiast. I like building systems and staying close to how they actually run, from the architecture down to the details that make the next change easier.</p>
+    <ul class="links">
+      <li><a href="https://pypi.org/project/totara-mcp/" target="_blank" rel="noopener noreferrer">Totara MCP</a></li>
+      <li><a href="https://www.skills.sh/nmb007/skills" target="_blank" rel="noopener noreferrer">Totara skills</a></li>
+      <li><a href="https://github.com/nmb007" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/naveedmasaudbutt/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="mailto:naveed.masood@arbisoft.com" target="_blank" rel="noopener noreferrer">Email</a></li>
+    </ul>
+    <p class="cert"><a href="https://drive.google.com/file/d/1Wte-fne9plZPbKluS-PFmoGfESuF8GZM/view?usp=sharing" target="_blank" rel="noopener noreferrer"><svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.4 14.8 8.6l6.7.6-5.1 4.4 1.6 6.6L12 16.7 6 20.2l1.6-6.6L2.5 9.2l6.7-.6L12 2.4z"/></svg>Totara Suite Site Administrator v20</a></p>
+  </header>
+
+  <nav class="toc" aria-label="On this page">
+    <a href="#platform">01 Platform</a>
+    <a href="#integrations">02 Integrations</a>
+    <a href="#horizon">03 Horizon</a>
+    <a href="#ai">04 AI workflow</a>
+  </nav>
+
+  <main>
+    <section id="platform" class="section">
+      <p class="num">01</p>
+      <div>
+        <h2>Platform</h2>
+        <p class="section-lead">A client-owned Totara, with a release path and a place for custom plugins to live.</p>
+        <div class="items">
+          <article>
+            <h3>Self-hosted environment</h3>
+            <p>Built a self-hosted Totara environment and keep it running.</p>
+          </article>
+          <article>
+            <h3>Client-owned codebase</h3>
+            <p>Established a self-hosted codebase for client-specific deployments, with direct access to the source and control over customisation and infrastructure.</p>
+          </article>
+          <article>
+            <h3>Release pipeline</h3>
+            <p>Designed and implemented a CI/CD pipeline that builds, packages, and deploys Totara artifacts across environments.</p>
+          </article>
+          <article>
+            <h3>Private plugin repository</h3>
+            <p>Built a private Composer repository for the organisation’s custom plugins, so they are versioned, distributed, and installable on any Totara instance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="integrations" class="section">
+      <p class="num">02</p>
+      <div>
+        <h2>Integrations</h2>
+        <p class="section-lead">Commerce, organisational data, payments, and virtual classrooms, connected as extensions of Totara.</p>
+        <div class="items">
+          <article>
+            <h3>Shopify and Odoo, through Workato</h3>
+            <p>Shopify receives newly created Totara courses and publishes them to the client’s live store. Odoo provisions Totara users together with their departments and reporting lines, so onboarding does not depend on a manual copy of the org chart.</p>
+          </article>
+          <article>
+            <h3>BigBlueButton</h3>
+            <p>Adapted the BigBlueButton Moodle plugin for the current Totara version, so virtual classrooms run inside Totara where the Moodle plugin had no direct fit.</p>
+          </article>
+          <article>
+            <h3>Google Meet on Seminars</h3>
+            <p>A custom integration so a Totara Seminar event can host its meeting in Google Meet.</p>
+          </article>
+          <article>
+            <h3>Stripe</h3>
+            <p>A native Totara payment plugin, written because existing Moodle plugins did not fit. Learners purchase a course and are enrolled after a successful payment. Transaction history uses Report Builder, and learner messages use Totara Notifications.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="horizon" class="section">
+      <p class="num">03</p>
+      <div>
+        <h2>Horizon</h2>
+        <p class="section-lead">A Totara 20 child theme of Inspire. Each organisation gets its own colours, logo, and login artwork.</p>
+        <div class="horizon">
+          <div class="horizon-copy">
+            <ul>
+              <li>Full-screen login</li>
+              <li>Forgotten-password flow on the same branded card</li>
+              <li>Brand-coloured sidebar</li>
+              <li>Expand and collapse navigation, with a desktop default per tenant</li>
+              <li>Catalogue search in the top bar</li>
+              <li>Two-pane preferences, grouped into profile, learning, notifications, and the rest</li>
+              <li>Redesigned the performance drawer into a compact bar of labelled chips for page time, memory, and database, with GraphQL stats that expand when performance info is on</li>
+            </ul>
+          </div>
+          <div class="frames" aria-hidden="true">
+            <figure class="frame">
+              <figcaption>Login</figcaption>
+              <div class="login">
+                <div class="login-card">
+                  <span class="mark"></span>
+                  <span class="bar w1"></span>
+                  <span class="field"></span>
+                  <span class="field"></span>
+                  <span class="btn"></span>
+                </div>
+              </div>
+            </figure>
+            <figure class="frame">
+              <figcaption>Signed in</figcaption>
+              <div class="shell">
+                <div class="side">
+                  <span class="mark light"></span>
+                  <span class="tick"></span>
+                  <span class="tick"></span>
+                  <span class="tick"></span>
+                  <span class="tick short"></span>
+                </div>
+                <div class="main">
+                  <div class="topbar"><span class="search">Catalogue</span></div>
+                  <div class="cards">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai" class="section">
+      <p class="num">04</p>
+      <div>
+        <h2>AI workflow</h2>
+        <p class="section-lead">Agent skills so coding assistants follow Totara’s architecture, and an MCP server any client can use against the external API.</p>
+        <div class="items">
+          <article>
+            <h3>Totara agent skills</h3>
+            <p>Specialised skills for plugin development and Totara architecture, written so AI-assisted work stays consistent and faster to review. Seven of them are published and installable with <code>npx skills add nmb007/skills</code>.</p>
+            <ul class="pills">
+              <li>Plugin structure</li>
+              <li>ORM</li>
+              <li>GraphQL</li>
+              <li>PHPUnit</li>
+              <li>TUI components</li>
+              <li>Vue Apollo</li>
+              <li>Themes</li>
+            </ul>
+            <p class="more"><a href="https://www.skills.sh/nmb007/skills" target="_blank" rel="noopener noreferrer">skills.sh/nmb007/skills</a></p>
+          </article>
+          <article>
+            <h3>Totara MCP</h3>
+            <p>A Python MCP server any MCP client can use to operate a Totara LMS through its external GraphQL API.</p>
+            <p class="more"><a href="https://pypi.org/project/totara-mcp/" target="_blank" rel="noopener noreferrer">pypi.org/project/totara-mcp</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p class="who"><a href="mailto:naveed.masood@arbisoft.com" target="_blank" rel="noopener noreferrer">naveed.masood@arbisoft.com</a></p>
+  </footer>
+</body>
+</html>
