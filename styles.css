@@ -68,6 +68,21 @@ a:hover { text-decoration-thickness: 2px; }
   text-transform: uppercase;
 }
 
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.portrait {
+  width: 8.25rem;
+  height: 8.25rem;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
 h1 {
   margin: 0;
   font-size: clamp(3rem, 8vw, 5.25rem);
@@ -424,6 +439,11 @@ code {
   .num { margin-top: 0; }
 
   .mast { padding-top: 2.5rem; }
+
+  .portrait {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
 
   .login,
   .shell { min-height: 180px; }
